@@ -22,7 +22,7 @@ on:
         type: string
     secrets:
       creds:
-        required: false
+        required: true
 jobs:
   register-environment:
     runs-on: ubuntu-latest
