@@ -42,7 +42,7 @@ jobs:
           #    tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           #    subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           #    enable-oidc: true
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.creds }}
           #
           # Choose the appropriate method based on your security requirements
           # Uncomment next line to use OIDC
