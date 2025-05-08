@@ -36,7 +36,6 @@ jobs:
           # 1. Service Principal: Uses client ID, tenant ID, client secret/certificate
           #    Example: creds:  
           # 
-          creds: ${{ secrets.AZURE_CREDENTIALS}}
           # 2. OIDC (OpenID Connect): More secure, uses federated identity credentials
           #    Example:
           #    client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -44,6 +43,9 @@ jobs:
           #    subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           #    enable-oidc: true
           #
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          enant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           # Choose the appropriate method based on your security requirements
           # Uncomment next line to use OIDC
           # enable-oidc: true
