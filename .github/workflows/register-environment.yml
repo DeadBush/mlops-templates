@@ -47,6 +47,12 @@ jobs:
           # Choose the appropriate method based on your security requirements
           # Uncomment next line to use OIDC
           # enable-oidc: true
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+           az account show
       - name: install-extension
         run: az extension add -n ml -y
       - name: update-extension
