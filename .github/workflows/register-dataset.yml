@@ -29,7 +29,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: "Az CLI login"
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:
           # Azure login can use either Service Principal or OIDC authentication:
           # 1. Service Principal: Uses client ID, tenant ID, client secret/certificate
@@ -46,18 +46,18 @@ jobs:
           creds: ${{secrets.creds}}
           # Uncomment next line to use OIDC
           # enable-oidc: true
-      - name: Register taxi-data as MLTable
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az ml data create \
-              --name taxi-data \
-              --version 1 \
-              --type mltable \                                   
-              --path data/taxi-data.csv \
-              --resource-group ${{ needs.get-config.outputs.resource_group }} \
-              --workspace-name ${{ needs.get-config.outputs.aml_workspace }}
+     # - name: Register taxi-data as MLTable
+     #   uses: azure/CLI@v1
+     #   with:
+     #     azcliversion: latest
+     #     inlineScript: |
+     #       az ml data create \
+     #         --name taxi-data \
+     #         --version 1 \
+     #         --type mltable \                                   
+     #         --path data/taxi-data.csv \
+     #         --resource-group ${{ needs.get-config.outputs.resource_group }} \
+     #         --workspace-name ${{ needs.get-config.outputs.aml_workspace }}
       - name: install-extension
         run: az extension add -n ml -y
       - name: update-extension
