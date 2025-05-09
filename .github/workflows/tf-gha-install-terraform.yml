@@ -91,7 +91,7 @@ jobs:
         shell: bash
     steps:
     - name: azure-login
-      uses: azure/login@v1
+      uses: azure/login@v2
       with:
         creds: ${{ env.AZURE_CREDENTIALS }}
         # environment: 'TBD' - default to azurecloud
